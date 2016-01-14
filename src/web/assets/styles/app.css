@@ -1,0 +1,194 @@
+*, *:before, *:after {
+  box-sizing: border-box; }
+
+html,
+body {
+  height: 100vh; }
+
+body {
+  margin: 0;
+  background: whitesmoke;
+  font: 20px sans-serif;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  animation: fade-in 1.5s forwards; }
+
+.btn-group--sounds {
+  position: absolute;
+  left: 0;
+  bottom: -76px; }
+
+.btn {
+  font-weight: 700;
+  text-transform: uppercase;
+  color: dodgerblue;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid dodgerblue;
+  outline: none;
+  font-family: "Gloria Hallelujah", sans-serif; }
+  .btn:hover {
+    cursor: pointer; }
+  .btn--mode {
+    color: green; }
+  .btn--sound, .btn--music {
+    min-width: 30px;
+    color: black;
+    margin-right: 10px;
+    background: radial-gradient(whitesmoke, green);
+    font-weight: normal; }
+    .btn--sound.disabled, .btn--music.disabled {
+      color: black;
+      background: whitesmoke; }
+
+.component--game {
+  position: relative;
+  max-width: 320px;
+  width: 100%;
+  display: inline-block;
+  background: linear-gradient(whitesmoke, teal); }
+  .component--game > .intro {
+    position: relative;
+    color: gray;
+    margin-bottom: 4px;
+    padding: 9px; }
+    .component--game > .intro > h1 {
+      margin: 0 0 10px;
+      font-size: 180%;
+      font-family: "Gloria Hallelujah", sans-serif; }
+    .component--game > .intro > .chosen {
+      display: block;
+      min-height: 1.4em;
+      line-height: 1.4em;
+      text-align: center;
+      color: #333;
+      text-transform: uppercase;
+      animation: gradient 2s linear infinite alternate; }
+    .component--game > .intro > .hud {
+      position: relative;
+      display: inline-block;
+      display: none;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 8px; }
+      .component--game > .intro > .hud > .points {
+        display: inline-block; }
+        .component--game > .intro > .hud > .points > .value {
+          color: dodgerblue;
+          font-weight: 700; }
+      .component--game > .intro > .hud > .timer {
+        display: inline-block; }
+        .component--game > .intro > .hud > .timer > .value {
+          color: dodgerblue;
+          font-weight: 700; }
+  .component--game .game-board {
+    position: relative;
+    margin: 50px auto 0;
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(dodgerblue, blue);
+    border: 10px solid;
+    transform: rotate(45deg);
+    border-radius: 10px;
+    display: none; }
+    .component--game .game-board.disabled:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      color: white;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 1; }
+    .component--game .game-board.disabled.game-ended:after {
+      background: rgba(0, 0, 0, 0.4); }
+    .component--game .game-board.disabled.correct-answer:after {
+      background: rgba(0, 255, 0, 0.5); }
+    .component--game .game-board.disabled.incorrect-answer:after {
+      background: rgba(255, 0, 0, 0.5); }
+    .component--game .game-board.disabled .word:before {
+      animation-play-state: paused; }
+    .component--game .game-board .word {
+      width: 100px;
+      height: 100px;
+      line-height: 100px;
+      background: white;
+      transform: rotate(-45deg);
+      position: absolute;
+      border-radius: 50%;
+      text-align: center;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: white;
+      background: rgba(26, 230, 26, 0.1);
+      overflow: hidden; }
+      .component--game .game-board .word:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        border: 2px solid transparent;
+        border-left-color: dodgerblue;
+        border-right-color: dodgerblue;
+        animation: rotate 3s linear infinite;
+        border-radius: 50%; }
+      .component--game .game-board .word:hover {
+        cursor: pointer; }
+      .component--game .game-board .word.incorrect:after {
+        content: '\02717';
+        color: red;
+        font-size: 50px;
+        left: 0;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        animation: scale-up 0.3s cubic-bezier(0.17, 0.67, 1, 1.6) forwards; }
+      .component--game .game-board .word.correct:after {
+        content: '\02713';
+        color: cyan;
+        font-size: 50px;
+        left: 0;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        animation: scale-up 0.3s cubic-bezier(0.17, 0.67, 1, 1.6) forwards; }
+      .component--game .game-board .word:nth-child(1) {
+        top: 4px;
+        left: 4px; }
+      .component--game .game-board .word:nth-child(2) {
+        top: 4px;
+        right: 4px; }
+      .component--game .game-board .word:nth-child(3) {
+        bottom: 4px;
+        left: 4px; }
+      .component--game .game-board .word:nth-child(4) {
+        bottom: 4px;
+        right: 4px; }
+
+@keyframes fade-in {
+  0% {
+    opacity: .2; }
+  100% {
+    opacity: 1; } }
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+
+@keyframes scale-up {
+  0% {
+    transform: scale(0.2); }
+  100% {
+    transform: scale(1); } }
+
+@keyframes gradient {
+  0% {
+    background: rgba(255, 255, 255, 0.2); }
+  100% {
+    background: rgba(255, 255, 255, 0.5); } }

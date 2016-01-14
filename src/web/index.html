@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Find the word puzzle game</title>
+    <link rel="stylesheet" href="assets/styles/app.css?v=1">    
+</head>
+
+<body>
+    <div class="component component--game">
+        <div class="intro">
+            <h1></h1>
+            <div class="hud">
+                <button class="btn btn--restart" onclick="viewModel.restartGame(this)">Restart</button>
+                <button class="btn btn--mode" onclick="viewModel.toggleMode(this)">easy</button>
+                <div class="points">
+                    <span class="value"></span> points
+                </div>
+                <div class="timer">
+                    <span class="value"></span> sec.
+                </div>
+                <div class="btn-group btn-group--sounds">
+                    <button onclick="viewModel.soundToggle()" class="btn btn--sound" aria-labelledby="sound toggle">&#9833;</button>
+                    <button onclick="viewModel.musicToggle()" class="btn btn--music" aria-labelledby="music toggle">&#9835;</button>
+                </div>
+            </div>
+            <div class="chosen"></div>
+        </div>
+        <div class="game-board">
+            <div class="word" onclick="viewModel.chooseWord(this)" aria-role="button"></div>
+            <div class="word" onclick="viewModel.chooseWord(this)" aria-role="button"></div>
+            <div class="word" onclick="viewModel.chooseWord(this)" aria-role="button"></div>
+            <div class="word" onclick="viewModel.chooseWord(this)" aria-role="button"></div>
+        </div>
+        <audio preload="auto" id="audio-mouse-click">
+            <source src="assets/sounds/mouse-click.ogg" type="audio/ogg">
+            <source src="assets/sounds/mouse-click.mp3" type="audio/mpeg">
+        </audio>
+        <audio preload="auto" id="audio-boom-bang">
+            <source src="assets/sounds/boom-bang.ogg" type="audio/ogg">
+            <source src="assets/sounds/boom-bang.mp3" type="audio/mpeg">
+        </audio>
+        <audio preload="auto" id="audio-countdown">
+            <source src="assets/sounds/countdown.ogg" type="audio/ogg">
+            <source src="assets/sounds/countdown.mp3" type="audio/mpeg">
+        </audio>
+        <audio preload="auto" id="audio-successful">
+            <source src="assets/sounds/successful.ogg" type="audio/ogg">
+            <source src="assets/sounds/successful.mp3" type="audio/mpeg">
+        </audio>
+        <audio preload="auto" loop id="audio-music">
+            <source src="assets/sounds/lemoncreme__groove-music.ogg" type="audio/ogg">
+            <source src="assets/sounds/lemoncreme__groove-music.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+    <script src="assets/scripts/app.js?v=1"></script>
+</body>
+
+</html>
