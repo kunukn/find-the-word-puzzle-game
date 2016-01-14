@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="C:\Code\GitHub\find-the-word-puzzle-game\src\cordova\platforms\android\CordovaLib\assets"/></dataSet><dataSet config="debug"><source path="C:\Code\GitHub\find-the-word-puzzle-game\src\cordova\platforms\android\CordovaLib\src\debug\assets"/></dataSet></merger>

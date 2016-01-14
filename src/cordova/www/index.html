@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="assets/styles/app.css">
+        <title>Find the word puzzle game</title>
+    </head>
+    <body>
+         <div class="component component--game">
+        <div class="intro">
+            <h1></h1>
+            <div class="hud">
+                <button class="btn btn--restart" onclick="viewModel.restartGame(this)">Restart</button>
+                <button class="btn btn--mode" onclick="viewModel.toggleMode(this)">easy</button>
+                <div class="points">
+                    <span class="value"></span> points
+                </div>
+                <div class="timer">
+                    <span class="value"></span> sec.
+                </div>
+                <div class="btn-group btn-group--sounds">
+                    <button onclick="viewModel.soundToggle()" class="btn btn--sound" aria-labelledby="sound toggle">&#9833;</button>
+                    <button onclick="viewModel.musicToggle()" class="btn btn--music" aria-labelledby="music toggle">&#9835;</button>
+                </div>
+            </div>
+            <div class="chosen"></div>
+        </div>
+        <div class="game-board">
+            <div class="word" onclick="viewModel.chooseWord(this)" aria-role="button"></div>
+            <div class="word" onclick="viewModel.chooseWord(this)" aria-role="button"></div>
+            <div class="word" onclick="viewModel.chooseWord(this)" aria-role="button"></div>
+            <div class="word" onclick="viewModel.chooseWord(this)" aria-role="button"></div>
+        </div>
+        <audio preload="auto" id="audio-mouse-click">
+            <source src="assets/sounds/mouse-click.ogg" type="audio/ogg">
+            <source src="assets/sounds/mouse-click.mp3" type="audio/mpeg">
+        </audio>
+        <audio preload="auto" id="audio-boom-bang">
+            <source src="assets/sounds/boom-bang.ogg" type="audio/ogg">
+            <source src="assets/sounds/boom-bang.mp3" type="audio/mpeg">
+        </audio>
+        <audio preload="auto" id="audio-countdown">
+            <source src="assets/sounds/countdown.ogg" type="audio/ogg">
+            <source src="assets/sounds/countdown.mp3" type="audio/mpeg">
+        </audio>
+        <audio preload="auto" id="audio-successful">
+            <source src="assets/sounds/successful.ogg" type="audio/ogg">
+            <source src="assets/sounds/successful.mp3" type="audio/mpeg">
+        </audio>
+        <audio preload="auto" loop id="audio-music">
+            <source src="assets/sounds/lemoncreme__groove-music.ogg" type="audio/ogg">
+            <source src="assets/sounds/lemoncreme__groove-music.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="assets/scripts/app.js"></script>
+    </body>
+</html>
