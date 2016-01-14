@@ -1,3 +1,7 @@
+#OS junk files
+[Tt]humbs.db
+*.DS_Store
+
 # Logs
 logs
 *.log
@@ -25,3 +29,10 @@ build/Release
 # Dependency directory
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
 node_modules
+
+#Sublime Text 2
+*.sublime-project
+*.sublime-workspace
+
+#bower
+bower_components/
