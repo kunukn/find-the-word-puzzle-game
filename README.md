@@ -1,2 +1,3 @@
-# find-the-word-puzzle-game
-A puzzle game
+# Find the word puzzle game
+A mobile friendly puzzle game.
+
