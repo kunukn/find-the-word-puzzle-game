@@ -58,13 +58,19 @@ let viewModel = (() => {
   
   // Word options for the game, insert your words here
   const wordOptions =
-    `appreciate abandoned absolutely accommodation accurately achievement acknowledge additional circumstance candidate 
-    calculation communication companion codepen developer deliberately demonstrate determination dangerous difference disappointment 
-    efficiently education electricity embarrassment encouragement engineering entertainment frontend familiar google generation 
-    gentleman geography hairdresser happiness handwriting information international introduction investigation involvement landscape 
-    laboratory language lieutenant manufacture management microsoft occasionally organization outstanding observation packaging pedagogical 
-    professional programmer punishment qualification satisfaction something salesperson technology temperature teammate thousandth twitter 
-    understanding undergraduate umbrella videographer`.match(/\S+/g);
+    `appreciate abandoned absolutely accommodation advertisement accurately achievement acknowledge additional 
+    afternoon afterwards approximately basketball bathroom batteries beginner boyfriend bracelet building 
+    circumstance candidate calculation communication companion centimeter complicated congratulation developer 
+    deliberately demonstrate determination dangerous difference disappointment downstairs dictionary efficiently 
+    education electricity embarrassment encouragement engineering entertainment frontend familiar generation gentleman 
+    geography girlfriend grandfather grandmother hairdresser happiness headphones handwriting however immigration 
+    insurance information international introduction investigation involvement landscape laboratory language lieutenant 
+    laundromat luggage magazine manufacture management microphone microwave motorcycle medicine morning outdoors 
+    occasionally organization outstanding observation packaging pedagogical painting participate photograph pronunciation 
+    professional programmer punishment qualification remember restaurant refrigerator scientist sandwich satisfaction 
+    something situation sentence salesperson supermarket technology temperature triangle teammate thousandth tomorrow toothbrush 
+    typewriter understanding undergraduate umbrella vacations videographer vitamins vegetables waitress wedding workplace`.match(/\S+/g);
+
 
   function Game() {    
     this.state = 'init';
