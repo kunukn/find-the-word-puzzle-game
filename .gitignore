@@ -40,3 +40,5 @@ bower_components/
 #Cordova android
 cordova/platforms/
 cordova/plugins/
+src/cordova/platforms/
+src/cordova/plugins/
